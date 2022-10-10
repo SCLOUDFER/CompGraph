@@ -1,1 +1,27 @@
-
+<HTML>
+	<BODY>
+		<canvas id="dz01" width="300" height="340"/>
+		<script>
+			canvas=document.getElementById("dz01");
+			context=canvas.getContext("2d");
+			var position = 1;
+			setInterval(function(){
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				context.fillStyle="#0000FF";
+				for (var k=1; k<4; k++){
+					for (var i=1; i<101; i++){
+						for (var j=position; j<96+position; j++){
+							context.fillRect(54-0.52*(i-j),20+100*(k-1)+i-k,1,1);
+						}
+					}
+					for (var i=1; i<101; i++){
+						for (var j=position; j<96+position; j++){
+							context.fillRect(101.96+0.52*(j+i),20+100*(k-1)+i-k,1,1);
+						}
+					}
+				}
+				position++;
+			}, 50);
+		</script>
+	</BODY>
+<HTML>
